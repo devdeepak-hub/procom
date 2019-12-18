@@ -1,0 +1,15 @@
+/**
+* 
+* Initial Setup
+* Contain the scss code which must be included before importing the components
+*
+*/
+@charset 'UTF-8';
+
+// Reset
+@import 'vendor/normalize';
+
+// Global Settings
+@import 'global/global-settings';
+
+

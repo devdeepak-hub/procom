@@ -1,0 +1,26 @@
+{
+  "name": "procom",
+  "version": "1.0.0",
+  "description": "sass customizable component library",
+  "main": "index.js",
+  "scripts": {
+    "dev-sass": "node-sass -w scss/procom.scss css/procom.css"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/deepak0174/procom.git"
+  },
+  "keywords": [
+    "sass",
+    "library"
+  ],
+  "author": "deepak0174",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/deepak0174/procom/issues"
+  },
+  "homepage": "https://github.com/deepak0174/procom#readme",
+  "dependencies": {
+    "node-sass": "^4.11.0"
+  }
+}

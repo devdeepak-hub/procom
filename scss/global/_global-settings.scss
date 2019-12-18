@@ -1,0 +1,68 @@
+/**
+*   These are the setting varialbles which can be altered by users
+*   except Media Queries
+*/
+
+/**
+*   Theme
+========================================================================== */
+$theme: (
+    'primary-color': rgb(80, 120, 160),
+    'secondary-color': rgb(80,20,100)
+) !global;
+
+
+/**
+*   Font
+========================================================================== */
+$font-family-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !global;
+$font-family-async: 'Montserrat', sans-serif !global;
+
+
+/**
+*   Grid
+========================================================================== */
+$num-cols: 12 !default;
+$gutter-width: 1.5rem !global;
+$element-top-margin: $gutter-width/3 !global;
+$element-bottom-margin: ($gutter-width*2)/3 !global;
+
+/**
+*   Media Queries (They are not customizable for now)
+========================================================================== */
+
+$small-screen-up: 601px !default;
+$medium-screen-up: 993px !default;
+$large-screen-up: 1201px !default;
+$small-screen: 600px !default;
+$medium-screen: 992px !default;
+$large-screen: 1200px !default;
+
+$medium-and-up: "only screen and (min-width : #{$small-screen-up})" !default;
+$large-and-up: "only screen and (min-width : #{$medium-screen-up})" !default;
+$extra-large-and-up: "only screen and (min-width : #{$large-screen-up})" !default;
+$small-and-down: "only screen and (max-width : #{$small-screen})" !default;
+$medium-and-down: "only screen and (max-width : #{$medium-screen})" !default;
+$medium-only: "only screen and (min-width : #{$small-screen-up}) and (max-width : #{$medium-screen})" !default;
+
+
+
+
+/**
+*   MIXINS (To change the default values of global variables)
+*
+*/
+
+@mixin set-theme($custom-theme: $theme){
+    $theme: map-merge($custom-theme, $theme) !global;
+    @each $theme-key, $theme-color in $custom-theme{
+        $theme: map-merge($theme, ($theme-key: $theme-color)) !global;
+        //@debug $theme;
+    }
+}
+
+@mixin set-font-stack($custom-font-family-stack: $font-family-stack, $custom-font-family-async: $font-family-async){
+    $font-family-stack: $custom-font-family-stack !global;
+    $font-family-async: $custom-font-family-async !global;
+    font-family: $font-family-stack;
+}

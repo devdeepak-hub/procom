@@ -1,0 +1,28 @@
+@charset 'UTF-8';
+// Reset
+@import 'procomp-initial';
+
+$my-theme: (
+    'secondary-color': black
+);
+html {
+    @include set-theme($my-theme);
+    color: map-get($theme, 'primary-color');
+    background-color: map-get($theme, 'secondary-color');
+}
+body {
+    color: map-get($theme,'primary-color');
+}
+div {
+    color: blue;
+}
+
+// Global Mixins
+
+// Utilities
+
+// Grid
+@import 'grid/grid';
+// Typography
+
+// Components
